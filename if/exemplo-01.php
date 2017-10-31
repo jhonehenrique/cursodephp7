@@ -1,6 +1,6 @@
 <?php
 
-$qualSuaIdade = 66;
+$qualSuaIdade = 10;
 
 $idadeCrianca = 12;
 $idadeJovem = 18;
@@ -15,5 +15,10 @@ if($qualSuaIdade < $idadeCrianca) {
 }else{
 	echo "Você é um idoso";
 }
+
+echo "<br>";
+
+//Condições ternarias//
+echo ($qualSuaIdade < $idadeMelhor) ? "Menor de idade" : "maior de idade";
 
 ?>
