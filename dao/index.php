@@ -9,9 +9,37 @@ require_once("config.php");
 // echo json_encode($usuarios);
 
 
-$root = new Usuario();
-$root->loadById(3);
 
-echo $root;
+//Carrega um usuario por ID//
+// $root = new Usuario();
+// $root->loadById(3);
+
+
+
+//Carrega uma lista de usuarios//
+//$lista = Usuario::getList();
+
+
+//Carrega lista de usuario buscando pelo login//
+//$search = Usuario::search("jhone");
+
+
+//Carega usuario usando login e senha//
+//$usuario = new Usuario();
+//$usuario->login("Jhone", "abcd123");
+//echo $usuario;
+
+
+
+// $aluno = new Usuario();
+// $aluno->setDeslogin("Jhone");
+// $aluno->setDessenha("0101");
+$aluno = new Usuario("Aluno", "@lun0");
+$aluno->insert();
+
+echo $aluno;
+
+//echo json_encode($search);
+
 
 ?>
