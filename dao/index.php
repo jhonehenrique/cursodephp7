@@ -31,12 +31,22 @@ require_once("config.php");
 
 
 
+<<<<<<< HEAD
 // $aluno = new Usuario();
 // $aluno->setDeslogin("Jhone");
 // $aluno->setDessenha("0101");
 $aluno = new Usuario("Aluno", "@lun0");
 $aluno->insert();
 
+=======
+$aluno = new Usuario();
+$aluno->setDeslogin("Aluno");
+$aluno->setDessenha("lin0");
+
+$aluno->insert();
+
+
+>>>>>>> def09df1bed433b308ace0630aa00fd2b80e7b06
 echo $aluno;
 
 //echo json_encode($search);

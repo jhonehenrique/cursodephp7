@@ -20,12 +20,30 @@ TRUNCATE TABLE tb_usuarios;
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+    
+
+
+
+
+>>>>>>> def09df1bed433b308ace0630aa00fd2b80e7b06
 CREATE PROCEDURE `sp_usuarios_insert` (
 pdeslogin VARCHAR(64),
 pdessenha VARCHAR(256)
 )
 BEGIN
 	INSERT INTO tb_usuarios (deslogin, dessenha) VALUES(pdeslogin, pdessenha);
+<<<<<<< HEAD
     SELECT * FROM tb_usuarios WHERE idusuario = LAST_INSERT_ID();
 END
 
+=======
+   SELECT * FROM tb_usuarios WHERE idusuario = LAST_INSERT_ID();
+END
+>>>>>>> def09df1bed433b308ace0630aa00fd2b80e7b06

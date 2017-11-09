@@ -53,6 +53,7 @@ class Usuario {
 		$sql = new Sql();
 		return $sql->select("SELECT * FROM tb_usuarios ORDER BY deslogin;");
 	}
+<<<<<<< HEAD
 
 	
 	public static function search($login) {
@@ -62,6 +63,17 @@ class Usuario {
 			));
 	}
 
+=======
+
+	
+	public static function search($login) {
+		$sql = new Sql();
+		return $sql->select("SELECT * FROM tb_usuarios WHERE deslogin LIKE :SEARCH ORDER BY deslogin", array(
+			':SEARCH'=>"%".$login."%"
+			));
+	}
+
+>>>>>>> def09df1bed433b308ace0630aa00fd2b80e7b06
 	public function login($login, $password) {
 		$sql = new Sql();
 		$results = $sql->select("SELECT * FROM tb_usuarios WHERE deslogin = :LOGIN AND dessenha = :PASSWORD", array(
@@ -70,6 +82,7 @@ class Usuario {
 		));
 		if (count($results) > 0) {
 			$this->setData($results);
+<<<<<<< HEAD
 
 		} else {
 			throw new Exception("Login ou senha inválido!");
@@ -83,6 +96,21 @@ class Usuario {
 		$this->setDtcadastro(new DateTime($data['dtcadastro']));
 	}
 
+=======
+
+		} else {
+			throw new Exception("Login ou senha inválido!");
+		}
+	}
+
+	public function setData($data) {
+		$this->setIdusuario($data['idusuario']);
+		$this->setDeslogin($data['deslogin']);
+		$this->setDessenha($data['dessenha']);
+		$this->setDtcadastro(new DateTime($data['dtcadastro']));
+	}
+
+>>>>>>> def09df1bed433b308ace0630aa00fd2b80e7b06
 	public function insert() {
 		$sql = new Sql();
 		$results = $sql->select("CALL sp_usuarios_insert(:LOGIN, :PASSWORD)", array(
@@ -90,8 +118,12 @@ class Usuario {
 			':PASSWORD'=>$this->getDessenha()
 			));
 		if(count($results) > 0) {
+<<<<<<< HEAD
 			//$this->setData($results);
 			$this->setData($results[0]);
+=======
+			$this->setData($results);
+>>>>>>> def09df1bed433b308ace0630aa00fd2b80e7b06
 		}
 	}
 
