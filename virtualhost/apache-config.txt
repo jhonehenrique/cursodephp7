@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "C:/xampp/htdocs/virtualhost"
+    ServerName www.xbyte.com.br
+    ErrorLog "logs/dummy-host2.example.com-error.log"
+    CustomLog "logs/dummy-host2.example.com-access.log" common
+
+<Directory "C:/xampp/htdocs/virtualhost">
+    Order allow,deny
+    Allow from all
+    Require all granted
+</Directory>
+</VirtualHost>
